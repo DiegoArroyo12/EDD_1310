@@ -17,8 +17,8 @@ with open("C:/Users/diego/Documents\EDD_1310/Ejercicio_Redes_Sociales/presenciar
         else: Encabezados.append(row)
 
 # Mostrar en pantalla la diferencia de seguidores (followers) en Twitter entre el mes de enero y junio.
-enero = Twitter[0][3].replace(',','')
-junio = Twitter[0][8].replace(',','')
+enero = Twitter[0][3]
+junio = Twitter[0][8]
 dif = int(enero) - int(junio)
 print(f"\nDiferencia de seguidores en Twitter entre el mes de Enero y Junio: {abs(dif)} seguidores")
 
@@ -26,8 +26,8 @@ print(f"\nDiferencia de seguidores en Twitter entre el mes de Enero y Junio: {ab
 print("\nDiferencia de visualizaciones de YouTube entre los meses de Enero y Junio: \n")
 mes1 = input("Ingresa un mes de Enero a Junio: ").upper()
 mes2 = input("Ingresa un mes de {} a Junio: ".format(mes1)).upper()
-v_mes1 = Youtube[1][Encabezados[0].index(mes1)].replace(',','')
-v_mes2 = Youtube[1][Encabezados[0].index(mes2)].replace(',','')
+v_mes1 = Youtube[1][Encabezados[0].index(mes1)]
+v_mes2 = Youtube[1][Encabezados[0].index(mes2)]
 dif = int(v_mes1) - int(v_mes2)
 print(f"\nLa diferencia de visualizaciones entre el mes de {mes1} y {mes2} es de: {abs(dif)} visualizaciones")
 
@@ -35,10 +35,10 @@ print(f"\nLa diferencia de visualizaciones entre el mes de {mes1} y {mes2} es de
 cf = []
 ct = []
 for i in range(3, len(Facebook[1])-1):
-    v = Facebook[1][i].replace(',','')
+    v = Facebook[1][i]
     cf.append(int(v))
 for i in range(3, len(Twitter[1])-1):
-    v = Twitter[1][i].replace(',','')
+    v = Twitter[1][i]
     ct.append(int(v))
 promf = sum(cf) / len(cf)
 promt = sum(ct) / len(ct)
