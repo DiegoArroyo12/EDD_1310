@@ -9,7 +9,6 @@ import arreglo.Arreglo;
  * @author diego
  */
 public class MainArreglo {
-    
     public static void main(String[] args){
         Arreglo arr = new Arreglo(10);
         arr.setElemento(1, new Persona("Diego", 18));
@@ -23,5 +22,4 @@ public class MainArreglo {
         System.out.println(arr);
         System.out.println(arr.toString());
     }
-    
 }

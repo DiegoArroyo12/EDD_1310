@@ -10,7 +10,6 @@ import java.util.Arrays;
  * @author diego
  */
 public class Arreglo <E>{
-    
     private final Object[] arr;
     public final int tamanio;
     
@@ -37,7 +36,7 @@ public class Arreglo <E>{
             final E elemento = (E)arr[indice];
             return elemento;
         } catch (Exception e){}
-        return (E) "Indice fuera de rango";
+        return (E) "Índice fuera de rango...";
     }
     
     void limpiar(E valor){
@@ -47,7 +46,5 @@ public class Arreglo <E>{
     }
     
     @Override
-    public String toString(){
-        return Arrays.toString(arr);
-    }
+    public String toString(){return Arrays.toString(arr);}
 }
