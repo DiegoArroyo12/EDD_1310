@@ -19,36 +19,48 @@ public class BalanceoParentesis {
         this.str = str;
     }
     
-    public boolean Desarrollo(String str){
-        char Parentesis[] = str.toCharArray();
-        int i;
-        for(i=0; i<Parentesis.length;i++){
-            if(Parentesis[i]=='('){
+    public String Desarrollo(){
+        int i = 0;
+        while (i < this.str.length()) {
+            if (this.str.charAt(i) == '('){
                 parentesis.push("(");
-            }
-            if(Parentesis[i]==')'){
-                if(!parentesis.isEmpty()){
+            } else if (this.str.charAt(i) == ')') {
+                if (parentesis.isEmpty()){
                     parentesis.pop();
+                }else{
+                    parentesis.push(")");
+                    break;
                 }
-            }
-            if(Parentesis[i]=='{'){
+            }else
+            if (this.str.charAt(i) == '{'){
                 parentesis.push("{");
-            }
-            if(Parentesis[i]=='}'){
-                if(!parentesis.isEmpty()){
+            } else if (this.str.charAt(i) == '}') {
+                if (parentesis.isEmpty()){
                     parentesis.pop();
+                }else{
+                    parentesis.push("}");
+                    break;
                 }
-            }
-            if(Parentesis[i]=='['){
+            }else
+            if (this.str.charAt(i) == '['){
                 parentesis.push("[");
-            }
-            if(Parentesis[i]==']'){
-                if(!parentesis.isEmpty()){
+            } else if (this.str.charAt(i) == ']') {
+                if (parentesis.isEmpty()){
                     parentesis.pop();
+                }else{
+                    parentesis.push("]");
+                    break;
                 }
             }
+            i++;
         }
-        return parentesis.isEmpty();
+        String respuesta;
+        if (parentesis.isEmpty()){
+            respuesta = "Está equilibrado";
+        } else{
+            respuesta = "No está equilibrado";
+        }
+        return respuesta;
     }
     public static void main(String[] args) throws Exception{
         System.out.println("Texto 1: ");
@@ -60,7 +72,7 @@ public class BalanceoParentesis {
             str += obj.nextLine();
         }
         BalanceoParentesis t1 = new BalanceoParentesis(str);
-        System.out.println(t1.Desarrollo(str));
+        System.out.println(t1.Desarrollo());
         
         System.out.println("\nTexto 2: ");
         File txt1 = new File("C:\\Users\\diego\\Documents\\EDD_1310\\Pilas\\texto2.txt");
@@ -71,11 +83,6 @@ public class BalanceoParentesis {
             str += obj1.nextLine();
         }
         BalanceoParentesis t2 = new BalanceoParentesis(str1);
-        System.out.println(t2.Desarrollo(str1));
-        
-        System.out.println("\nPrueba extra: ");
-        BalanceoParentesis prueba = new BalanceoParentesis("{{{}}");
-        System.out.println(prueba.Desarrollo("{{{}}"));
+        System.out.println(t2.Desarrollo());
     }
-    
 }
