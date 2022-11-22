@@ -13,12 +13,10 @@ import java.util.ArrayList;
 public class QueueADT <T>{
     ArrayList<T> cola;
     int frente;
-    int ultimo;
 
     public QueueADT() {
         cola = new ArrayList<>();
         frente = 0;
-        ultimo = -1;
     }
     
     public boolean is_empty(){
